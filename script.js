@@ -84,13 +84,25 @@ function makegame() {
             board[4].value = 9
             board[6].value = 9
           }
-          if ((key.row == board[x].row) && (key != board[x])) {
+          if ((key.row == board[x].row) && (key != board[x]) ) {
             if (key.takenBy === board[x].takenBy) {
               console.log(board[x])
               console.log(key)
               for (let z = 0; z <= 8; z++) {
                 if (board[z].row == key.row) {
                   board[z].value = 9
+                }
+
+              }
+            }
+          }
+          else if((key.row != board[x].row) && (board[x].takenBy != "")&&(key.block == board[x].block)&&(board[x].value < 9)) {
+            if (key.takenBy === board[x].takenBy) {
+              console.log(board[x])
+              console.log(key)
+              for (let z = 0; z <= 8; z++) {
+                if (board[z].row == key.row) {
+                  board[z].value = 0
                 }
 
               }
@@ -103,6 +115,18 @@ function makegame() {
               for (let z = 0; z <= 8; z++) {
                 if (board[z].block == key.block) {
                   board[z].value = 9
+                }
+
+              }
+            }
+          }
+          else if((key.block != board[x].block) && (board[x].takenBy != "")&&(key.row == board[x].row)&&(board[x].value < 9)) {
+            if (key.takenBy === board[x].takenBy) {
+              console.log(board[x])
+              console.log(key)
+              for (let z = 0; z <= 8; z++) {
+                if (board[z].block == key.block) {
+                  board[z].value = 0
                 }
 
               }
