@@ -50,6 +50,9 @@ function makegame() {
       let z = 0
       document.getElementById("row" + x).appendChild(block);
       if (x == 2 && y == 2) {
+        z = 2
+      }
+      else if((x == 1) && ((y ==1) || (y ==3))){
         z = 1
       }
       let square = {
